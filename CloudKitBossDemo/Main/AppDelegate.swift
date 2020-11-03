@@ -22,8 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        CKManager.registerForRemoteNotifications(application: application, delegate: self)
-//        CKManager.requestApplicationPermissionForUserDiscoverability()
+//        CKBManager.launch(application: application, delegate: self)
         
         return true
     }

@@ -44,9 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
-//        CKManager.discoverUserIdentity()
-//        CKManager.saveZones([CKRecordZone(zoneID: CKRecordZone.ID(zoneName: CKBConstant.Zone.Notes))], database: CKManager.privateDatabase)
-//        CKManager.saveSubscriptions()
+//        CKBManager.sceneWillEnterForeground([CKRecordZone(zoneID: CKRecordZone.ID(zoneName: CKBConstant.Zone.Notes))], database: CKManager.privateDatabase)
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
