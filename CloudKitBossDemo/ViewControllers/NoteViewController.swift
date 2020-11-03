@@ -173,6 +173,7 @@ class NoteViewController: UIViewController {
     }
     
     func useCategory(name: String) {
+        // TODO: 17 - useCategory
 //        if let category = category {
 //            let updatedCategory = Category(recordName: category.recordName, ownerName: category.ownerName, creationDate: category.creationDate, modificationDate: Date(), shareRecordName: category.shareRecordName, ownerFullName: category.ownerFullName, name: name)
 //            CKRecordModelOperation.update(updatedCategory) { (result) in
@@ -203,6 +204,7 @@ class NoteViewController: UIViewController {
     
     @objc
     func handleSave() {
+        // TODO: 18 - handleSave
 //        guard let text = noteTextView.text, let noteImage = noteImage else {
 //            return
 //        }
@@ -245,7 +247,8 @@ extension NoteViewController: UITextViewDelegate {
 extension NoteViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else {
-//            CKBAlert.showSuccess(message: "No image found", on: self)
+            // TODO: 19 - showInfo
+//            CKBAlert.showInfo(message: "No image found", on: self)
             return
         }
         noteImage = image.jpegData(compressionQuality: 0.3)

@@ -13,6 +13,7 @@ class NotesViewController: UIViewController {
     
     var isShared = false
     
+    // TODO: 07 - CKUser
 //    var user: CKUser?
     
     var notes: [Note] = [] {
@@ -53,6 +54,7 @@ class NotesViewController: UIViewController {
         super.viewDidLoad()
         setupNavigation()
         setupViews()
+        // TODO: 08 - fetchData
 //        if user == nil {
 //            CKManager.discoverUserIdentity { (result) in
 //                if let recordName = CKManager.userRecordId?.recordName {
@@ -68,6 +70,7 @@ class NotesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // TODO: 36 - addObserver
 //        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveRecordChanged(_:)), name: .didReceiveRecordChanged, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveRecordDeleted(_:)), name: .didReceiveRecordDeleted, object: nil)
     }
@@ -77,6 +80,7 @@ class NotesViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // TODO: 37 - onDidReceiveRecordChanged
 //    @objc func onDidReceiveRecordChanged(_ notification:Notification) {
 //        if let data = notification.userInfo as? [String: CKRecord] {
 //            for (_, record) in data {
@@ -96,6 +100,7 @@ class NotesViewController: UIViewController {
 //        }
 //    }
     
+    // TODO: 38 - onDidReceiveRecordDeleted
 //    @objc func onDidReceiveRecordDeleted(_ notification:Notification) {
 //        if let data = notification.userInfo as? [CKRecord.ID: CKRecord.RecordType] {
 //            for (recordId, recordType) in data {
@@ -151,7 +156,7 @@ class NotesViewController: UIViewController {
     
     fileprivate func fetchData() {
         isFetched(false)
-        
+        // TODO: 09 - fetchData
 //        let predicate = NSPredicate(format: "%K == %@", CKBConstant.CKBField.ownerName, user?.recordName ?? "")
 //
 //        CKBOperation<Note>.fetch(CKBConstant.EntityName.Note, ofType: CDNote.self, predicate: predicate) { (result) in
@@ -179,6 +184,7 @@ class NotesViewController: UIViewController {
     }
     
     fileprivate func refreshData() {
+        // TODO: 10 - refreshData
 //        let predicate = NSPredicate(format: "%K == %@", CKBConstant.CKBField.ownerName, user?.recordName ?? "")
 //        CKBOperation<Note>.refresh(recordType: CKBConstant.RecordType.Note,
 //                                    entityName: CKBConstant.EntityName.Note,
@@ -210,6 +216,7 @@ class NotesViewController: UIViewController {
     }
     
     fileprivate func refreshAllSharedData() {
+        // TODO: 31 - refreshAllSharedData
 //        let sharedData = CKContainer.default().sharedCloudDatabase
 //        sharedData.fetchAllRecordZones { (recordZones, err) in
 //            if let err = err {
@@ -258,6 +265,7 @@ class NotesViewController: UIViewController {
     }
     
     fileprivate func refreshSharedData() {
+        // TODO: 32 - refreshSharedData
 //        let sharedData = CKContainer.default().sharedCloudDatabase
 //        sharedData.fetchAllRecordZones { (recordZones, err) in
 //            if let err = err {
@@ -308,6 +316,7 @@ class NotesViewController: UIViewController {
     }
     
     func sharedRecords(zoneID: CKRecordZone.ID, recordType: String){
+        // TODO: 30 - sharedRecords
 //        let sharedDatabase = CKManager.sharedDatabase
 //
 //        let predicate = NSPredicate(value: true)
@@ -335,6 +344,7 @@ class NotesViewController: UIViewController {
             combinedCategories.append(category)
         }
         
+        // TODO: 11 - noCategoryNotes
 //        let noCategoryNotes = notes.filter { $0.parentRecordName == nil }
 //        var category = Category(name: "No Categories")
 //        category.notes = noCategoryNotes
@@ -364,6 +374,7 @@ class NotesViewController: UIViewController {
     
     @objc
     func handleOptions() {
+        // TODO: 12 - handleOptions
 //        var actions = [UIAlertAction]()
 //
 //        let refreshAction = UIAlertAction(title: "Refresh", style: .default) { (action) in
@@ -401,7 +412,7 @@ class NotesViewController: UIViewController {
     }
     
     func handleShare() {
-        
+        // TODO: 20 - handleShare
 //        CDObjectOperation<Category>.fetch(CKBConstant.EntityName.Category, ofType: CDCategory.self) { (result) in
 //            switch result {
 //            case .success(let categories):
@@ -477,7 +488,7 @@ extension NotesViewController: UITableViewDataSource {
             
             notes.remove(at: index)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
+            // TODO: 14 - delete
 //            var database = CKManager.privateDatabase
 //            if isShared {
 //                database = CKManager.sharedDatabase
@@ -498,7 +509,7 @@ extension NotesViewController: UITableViewDataSource {
                 
                 categories.remove(at: index)
                 tableView.deleteSections([indexPath.section], with: .fade)
-                
+                // TODO: 13 - delete
 //                var database = CKManager.privateDatabase
 //                if isShared {
 //                    database = CKManager.sharedDatabase
@@ -521,7 +532,7 @@ extension NotesViewController: UITableViewDataSource {
 extension NotesViewController: NoteViewControllerDelegate {
     
     func didAdd(_ note: Note, categories: [Category]) {
-        
+        // TODO: 16 - didAdd
 //        var database = CKManager.privateDatabase
 //        if isShared {
 //            database = CKManager.sharedDatabase
@@ -543,6 +554,7 @@ extension NotesViewController: NoteViewControllerDelegate {
         guard let index = notes.map({ $0.recordName }).firstIndex(of: note.recordName) else {
             return
         }
+        // TODO: 15 - didChange
 //        var database = CKManager.privateDatabase
 //        if isShared {
 //            database = CKManager.sharedDatabase
@@ -563,6 +575,7 @@ extension NotesViewController: NoteViewControllerDelegate {
 
 extension NotesViewController: UICloudSharingControllerDelegate {
     func cloudSharingController(_ csc: UICloudSharingController, failedToSaveShareWithError error: Error) {
+        // TODO: 21 - showError
 //        CKBAlert.showError(message: error.localizedDescription, on: self)
     }
     
@@ -579,12 +592,14 @@ extension NotesViewController: UICloudSharingControllerDelegate {
     }
     
     func cloudSharingControllerDidSaveShare(_ csc: UICloudSharingController) {
+        // TODO: 22 - showSuccess
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
 //            CKBAlert.showSuccess(message: "Successfully shared", on: self)
 //        }
     }
     
     func cloudSharingControllerDidStopSharing(_ csc: UICloudSharingController) {
+        // TODO: 23 - showInfo
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
 //            CKBAlert.showInfo(message: "Stopped sharing", on: self)
 //        }

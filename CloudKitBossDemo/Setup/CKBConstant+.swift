@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: 02 - Create CKBConstants
 //extension CKBConstant {
 //    
 //    static let coreDataModel = "CloudKitBossDemoModel"

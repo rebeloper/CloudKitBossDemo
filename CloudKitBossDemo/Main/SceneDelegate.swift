@@ -44,6 +44,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        
+        // TODO: 03 - sceneWillEnterForeground
 //        CKBManager.sceneWillEnterForeground([CKRecordZone(zoneID: CKRecordZone.ID(zoneName: CKBConstant.Zone.Notes))], database: CKManager.privateDatabase)
     }
 
@@ -51,12 +53,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        
+        // TODO: 04 - sceneDidEnterBackground
 //        CDManager.save()
     }
 
 
 }
 
+// TODO: 24 - userDidAcceptCloudKitShareWith
 //extension SceneDelegate {
 //    func windowScene(_ windowScene: UIWindowScene, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShare.Metadata) {
 //        let zoneName = cloudKitShareMetadata.rootRecordID.zoneID.zoneName

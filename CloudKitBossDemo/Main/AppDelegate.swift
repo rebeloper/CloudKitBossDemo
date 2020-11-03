@@ -5,13 +5,6 @@
 //  Created by Alex Nagy on 03/11/2020.
 //
 
-//
-//  AppDelegate.swift
-//  CloudKitMasterDemo
-//
-//  Created by Alex Nagy on 14/10/2020.
-//
-
 import UIKit
 import CloudKit
 
@@ -22,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // TODO: 00 - Add CloudKitBoss
+        // TODO: 01 - Launch CKBManager
 //        CKBManager.launch(application: application, delegate: self)
         
         return true
@@ -41,12 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
+    // TODO: 33 - didReceiveRemoteNotification
 //    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 //        CKManager.handleUserInfo(userInfo, fetchCompletionHandler: completionHandler)
 //    }
 
 }
 
+// TODO: 34 - UNUserNotificationCenterDelegate
 //extension AppDelegate: UNUserNotificationCenterDelegate {
 //    
 //    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -54,7 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
 //    
 //}
-//
+
+// TODO: 35 - CKManagerDelegate
 //extension AppDelegate: CKManagerDelegate {
 //    
 //    func saveSubscriptions() {

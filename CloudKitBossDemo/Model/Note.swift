@@ -22,6 +22,7 @@ struct Note {
     var images: [Data]?
 }
 
+// TODO: 05 - Note CKBRecord
 //extension Note: CKBRecord {
 //    
 //    init(text: String, ownerName: String? = CKManager.userRecordId?.recordName) {

@@ -23,6 +23,7 @@ struct Category {
     var notes: [Note]?
 }
 
+// TODO: 06 - Category CKBRecord
 //extension Category: CKBRecord {
 //
 //    init(name: String, ownerName: String? = CKManager.userRecordId?.recordName) {

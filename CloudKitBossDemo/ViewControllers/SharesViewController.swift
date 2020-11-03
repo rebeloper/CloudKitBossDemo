@@ -5,22 +5,17 @@
 //  Created by Alex Nagy on 03/11/2020.
 //
 
-//
-//  SharesViewController.swift
-//  CloudKitMasterDemo
-//
-//  Created by Alex Nagy on 30/10/2020.
-//
-
 import Foundation
 import UIKit
 
 class SharesViewController: UIViewController {
     
+    // TODO: 25 - CKUser
 //    var users = [CKUser]()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        // TODO: 27 - tableView
 //        tableView.dataSource = self
 //        tableView.delegate = self
         tableView.registerCell(UserTableViewCell.self)
@@ -46,6 +41,7 @@ class SharesViewController: UIViewController {
         fetchMyData()
     }
     
+    // TODO: 26 - show user
 //    fileprivate func show(_ user: CKUser) {
 //        let controller = NotesViewController()
 //        controller.title = "Shares from \(user.fullName)"
@@ -55,6 +51,7 @@ class SharesViewController: UIViewController {
 //    }
     
     fileprivate func fetchMyData() {
+        // TODO: 29 - fetchMyData
 //        let predicate = NSPredicate(format: "%K != %@", CKBConstant.CKBField.ownerName, CKManager.userRecordId?.recordName ?? "")
 //
 //        CKBOperation<Category>.fetch(CKBConstant.EntityName.Category, ofType: CDCategory.self, predicate: predicate) { (result) in
@@ -93,6 +90,7 @@ class SharesViewController: UIViewController {
     }
 }
 
+// TODO: 28 - UITableViewDelegate & UITableViewDataSource
 //extension SharesViewController: UITableViewDelegate {
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let user = users[indexPath.row]
