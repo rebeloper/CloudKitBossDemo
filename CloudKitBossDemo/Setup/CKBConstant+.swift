@@ -9,7 +9,7 @@ import Foundation
 
 //extension CKBConstant {
 //    
-//    static let coreDataModel = "CloudKitMasterDemoModel"
+//    static let coreDataModel = "CloudKitBossDemoModel"
 //    
 //    struct Subscription {
 //        static let NoteCreated = "Note Created Subscription"
