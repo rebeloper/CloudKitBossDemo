@@ -16,7 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = TabViewController()
+        
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -39,14 +44,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+//        CKManager.discoverUserIdentity()
+//        CKManager.saveZones([CKRecordZone(zoneID: CKRecordZone.ID(zoneName: CKBConstant.Zone.Notes))], database: CKManager.privateDatabase)
+//        CKManager.saveSubscriptions()
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+//        CDManager.save()
     }
 
 
 }
+
+//extension SceneDelegate {
+//    func windowScene(_ windowScene: UIWindowScene, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShare.Metadata) {
+//        let zoneName = cloudKitShareMetadata.rootRecordID.zoneID.zoneName
+//        switch zoneName {
+//        case CKBConstant.Zone.Notes:
+//            CKShareOperation<Category>.accept(cloudKitShareMetadata) { (result) in
+//                switch result {
+//                case .success(let model):
+//                    let ownerName = cloudKitShareMetadata.share.owner.userIdentity.nameComponents?.givenName
+//                    print("Accepted share '\(model.name)'\(ownerName != nil ? " from \(ownerName!)" : "")")
+//                case .failure(let err):
+//                    print(err.localizedDescription)
+//                }
+//            }
+//        default:
+//            print("Invalid zoneName: \(zoneName)")
+//        }
+//        
+//    }
+//}
+
 
