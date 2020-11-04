@@ -46,7 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to undo the changes made on entering the background.
         
         // TODO: 03 - sceneWillEnterForeground
-//        CKBManager.sceneWillEnterForeground([CKRecordZone(zoneID: CKRecordZone.ID(zoneName: CKBConstant.Zone.Notes))], database: CKManager.privateDatabase)
+//        CKBManager.sceneWillEnterForeground([CKRecordZone(zoneID: CKRecordZone.ID(zoneName: CKBConstant.Zone.Notes))])
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
